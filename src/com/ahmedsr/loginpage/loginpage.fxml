@@ -1,0 +1,67 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane fx:controller="com.ahmedsr.loginpage.LoginController"
+            xmlns:fx="http://javafx.com/fxml">
+    <center>
+        <GridPane alignment="TOP_CENTER" hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20"/>
+            </padding>
+
+            <Label text="Login Page" alignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <font>
+                    <Font name="Berlin Sans FB"  size="22"/>
+                </font>
+                <padding>
+                    <Insets bottom="20" left="20" right="20" top="20"/>
+                </padding>
+            </Label>
+
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="2">
+                <Label text="Username">
+                    <font>
+                        <Font name="A Jaanat LT" size="14"/>
+                    </font>
+                </Label>
+
+                <TextField fx:id="usernameTextFiled" prefWidth="200" onKeyReleased="#handleKeyReleased"/>
+
+                <Label text="Password">
+                    <font>
+                        <Font name="A Jaanat LT" size="14"/>
+                    </font>
+                </Label>
+
+                <PasswordField fx:id="passwordTextFiled" prefWidth="200" onKeyReleased="#handleKeyReleased" />
+
+                <CheckBox fx:id="rememberCheckBox" text="Remember me" indeterminate="true"/>
+            </VBox>
+
+            <HBox GridPane.rowIndex="2" GridPane.columnIndex="0" alignment="CENTER" spacing="10">
+                <Button fx:id="loginBtn" text="Login" prefWidth="100" prefHeight="40" onAction="#onBtnClicked"/>
+                <Button fx:id="registerBtn" text="Register" prefWidth="100" prefHeight="40" onAction="#onBtnClicked"/>
+            </HBox>
+
+        </GridPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLbl" maxWidth="Infinity" alignment="BOTTOM_CENTER"
+               style="-fx-border-color: #C8C8C8;
+               -fx-border-width: 1 0 0 0;
+               -fx-border-style: solid" text="Copyright Created By Ahmed Saber  ">
+            <padding>
+                <Insets top="2" left="10" bottom="2" right="10"/>
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
